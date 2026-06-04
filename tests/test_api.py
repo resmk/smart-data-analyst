@@ -4,6 +4,12 @@ from httpx import AsyncClient, ASGITransport
 import io
 
 from app.main import app
+from app.models.database import init_db
+
+
+@pytest_asyncio.fixture(autouse=True)
+async def setup_db():
+    await init_db()
 
 
 @pytest_asyncio.fixture
