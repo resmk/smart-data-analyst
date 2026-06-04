@@ -26,7 +26,9 @@ jobs:
 
       - name: Run tests
         env:
-          OPENAI_API_KEY: "sk-test-placeholder"
+          OPENAI_API_KEY: "gsk_test_placeholder"
+          OPENAI_MODEL: "llama-3.3-70b-versatile"
+          APP_ENV: "test"
         run: pytest tests/ -v
 
       - name: Build Docker image
